@@ -1,0 +1,67 @@
+p {
+    font-size: 10px;
+}
+
+h6 {
+    margin-left: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.video {
+    height: 150px;
+}
+
+.video2 {
+    height: 350px;
+}
+
+.contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    font-size: 9px;
+}
+
+.texto-encima {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+form {
+    border-radius: 5px;
+    background-color: rgba(169, 169, 169, 0.555);
+}
+
+input,
+select {
+    margin-bottom: 5px;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    height: 300px;
+}
+
+.contenedores {
+    background-color: black;
+    width: 400px;
+    height: 200px;
+    border: black solid 1px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    color: white;
+}

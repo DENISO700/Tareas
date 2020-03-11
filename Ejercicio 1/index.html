@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <div class=" col-md-12 m-auto ">
+
+
+        <header class="my-4 ">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white col-xs-12 ">
+                <a class="navbar-brand" href="#"><img src="/img/logo.png" class="w-100 "></a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <input class="form-control mr-sm-2 w-50 ml-auto" type="search" placeholder="Buscar">
+                    <button class="btn bg-light my-2 my-sm-0" type="submit">Buscar</button>
+
+                </div>
+            </nav>
+
+
+        </header>
+
+        <div class="container ">
+
+
+            <div class="row" id="Videos">
+
+
+            </div>
+
+        </div>
+
+        <div class="row d-block d-sm-none">
+
+            <form class="m-3 p-3 ">
+                <input type="text" class="form-control" placeholder="Titulo" id="txtTitulo">
+
+                <input type="text" class="form-control" placeholder="URL Caratula" id="txtCaratula">
+
+                <select class="custom-select" id="canal">
+                                    
+                              </select>
+
+                <input type="text" class="form-control" placeholder="Visualizaciones" id="vistas">
+
+                <input type="text" class="form-control" placeholder="Duracion HH:MM" id="duracion">
+
+                <input type="text" class="form-control" placeholder="Subido Hace X Horas" id="subido">
+
+                <button type="button" class="btn btn-danger" id="NuevoVideo" onclick="guardarVideo()">Guardar</button>
+
+
+            </form>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <script src="/js/controlador.js"></script>
+</body>
+
+</html>

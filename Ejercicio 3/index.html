@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div id="sirve" class="row">
+
+    </div>
+
+    <div class=" col-md-12 mx-auto mb-5 ">
+
+
+        <header class="my-4 ">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark col-xs-12 ">
+                <a class="navbar-brand" href="#"><img src="/img/logo.png" class="w-100 "></a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <input class="form-control mr-sm-2 w-25 ml-auto" type="search" placeholder="Buscar">
+                    <button class="btn bg-light my-2 my-sm-0" type="submit">Buscar</button>
+
+
+                </div>
+            </nav>
+
+
+        </header>
+
+        <div class="container col-md-10 bg-white">
+
+
+
+            <div class="row" id="Principal">
+
+            </div>
+
+            <div class="row" id="inicio">
+
+            </div>
+            <input type="hidden" id="indice-artista-seleccionado">
+            <div class="row" id="detalle">
+
+            </div>
+
+            <div class="row " id="formulario">
+
+                <div class="col-md-12 col-xs-12 col-sm-12 mx-auto mt-5">
+
+                    <form class="m-3 p-3">
+
+                        <h1 style="color: black;" style="font-weight: bold;">Nueva Noticia</h1>
+
+                        <input type="text" class="form-control" placeholder="URL Caratula" id="txtCaratula">
+
+                        <input type="text" class="form-control" placeholder="Titulo" id="txtTitulo">
+
+                        <input type="date" class="form-control" id="txtFecha">
+
+                        <input type="text" class="form-control" placeholder="Likes" id="txtLikes">
+
+                        <input type="text" class="form-control" placeholder="Comentarios" id="txtComentarios">
+
+                        <input type="text" class="form-control" placeholder="Redactor" id="txtRedactor">
+
+                        <textarea placeholder="Resumen Noticia" cols="130" rows="5" id="txtResumen"></textarea>
+
+                        <textarea placeholder="Detalle Noticia" cols="130" rows="5" id="txtDetalle"></textarea>
+
+                        <select class="custom-select mt-1" id="Categoria">
+                          <option selected>Categoria</option>
+                       
+                        </select>
+
+                        <label class="form-control mt-1">&nbsp;Principal</label>
+                        <select class="custom-select mt-1" id="txtPrincipal">
+                            <option selected>Posicion</option>
+                            <option value="Principal">Si</option>
+                            <option value="No">No</option>
+                           
+                          </select>
+
+                        <label class="form-control mt-1">&nbsp;Ultima Hora</label>
+                        <select class="custom-select mt-1" id="txtUltima">
+                            <option selected>Prioridad</option>
+                            <option value="Ultima Hora">Si</option>
+                            <option value="No">No</option>
+                           
+                          </select>
+
+
+                        <button type="button" class="btn btn-danger mt-1" id="agregarNoticia" onclick="guardarNoticia();">Guardar</button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <!-- Cargar programacion con Local Storage-->
+    <script src="/js/controlador.js"></script>
+
+
+</body>
+
+</html>
