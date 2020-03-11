@@ -1,5 +1,6 @@
 var localStorage = window.localStorage;
 var Noticias;
+var indiceNoticia;
 
 var Categorias = [
 
@@ -155,28 +156,32 @@ function generarNoticias() {
 
             //Verifica el atributo ultima hora
             if (Noticias[j].ultimaHora == true) {
+                indiceNoticia = j;
 
                 document.getElementById("Principal").innerHTML += ` <div class=" col-md-12 col-xs-12 col-sm-12 bg-white ">
 
     <div class="container bg-dark">
         <div class="row">
             <div class="contenedor ">
-                <img src="${Noticias[j].Caratula}" class="w-100 principal ">
+                         <img src="${Noticias[j].Caratula}" class="w-100 principal ">
                 <div class="texto-encima "><span class="badge badge-danger p-1">&nbsp;Ultima Hora</span></div>
             </div>
 
         </div>
 
         <div class="row mt-2">
+      
             <h6 class="col-12">${Noticias[j].Titulo}</h6>
             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes} / ${Noticias[j].fechaPublicacion}<br> <a href="#" onclick="verDetalles(indice);">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes} / ${Noticias[j].fechaPublicacion}<br><button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
 
         </div>
 
 
 
     </div>
+   
+
 </div> `
 
             } else {
@@ -194,13 +199,14 @@ function generarNoticias() {
         <div class="row mt-2">
             <h6 class="col-12">${Noticias[j].Titulo}</h6>
             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes} / ${Noticias[j].fechaPublicacion}<br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes} / ${Noticias[j].fechaPublicacion}<br><button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
 
         </div>
 
 
 
     </div>
+   
 </div> `
             }
 
@@ -209,6 +215,7 @@ function generarNoticias() {
 
             //Verifica el atributo Catagoria
             if (Noticias[j].categoria == "Recientes") {
+                indiceNoticia = Noticias[j].value;
                 //Verifica el atributo ultima hora
                 if (Noticias[j].ultimaHora == true) {
                     document.getElementById("Recientes").innerHTML += `<div class=" col-md-4 col-xs-12 col-sm-12 bg-white  mt-3 ">
@@ -226,12 +233,12 @@ function generarNoticias() {
                         <div class="row mt-2">
                             <h6 class="col-12">${Noticias[j].Titulo}</h6>
                             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-                            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+                            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
                 
                         </div>
                 
                     </div>
-                
+                   
                 </div>
                 `
                 } else {
@@ -249,12 +256,12 @@ function generarNoticias() {
         <div class="row mt-2">
             <h6 class="col-12">${Noticias[j].Titulo}</h6>
             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br><button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
 
         </div>
 
     </div>
-
+   
 </div>
 `
 
@@ -280,12 +287,12 @@ function generarNoticias() {
                         <div class="row mt-2">
                             <h6 class="col-12">${Noticias[j].Titulo}</h6>
                             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-                            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+                            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
                 
                         </div>
                 
                     </div>
-                
+                   
                 </div>
                 `
                 } else {
@@ -303,12 +310,12 @@ function generarNoticias() {
         <div class="row mt-2">
             <h6 class="col-12">${Noticias[j].Titulo}</h6>
             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
 
         </div>
 
     </div>
-
+   
 </div>
 `
 
@@ -334,12 +341,12 @@ function generarNoticias() {
                         <div class="row mt-2">
                             <h6 class="col-12">${Noticias[j].Titulo}</h6>
                             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-                            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+                            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
                 
                         </div>
                 
                     </div>
-                
+                   
                 </div>
                 `
                 } else {
@@ -357,12 +364,12 @@ function generarNoticias() {
         <div class="row mt-2">
             <h6 class="col-12">${Noticias[j].Titulo}</h6>
             <p style="color: darkgray;" class="col-12 ">${Noticias[j].resumenNoticia}</p>
-            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <a href="#">Ver Mas</a>&nbsp;|<a href="#">Eliminar</a></p>
+            <p style="color: darkgray;" class="col-12 ">${Noticias[j].likes}/ ${Noticias[j].fechaPublicacion} <br> <button type="button" class="btn btn-primary" onclick="verDetalles();">Ver Mas</button>&nbsp;|<a href="#">Eliminar</a></p>
 
         </div>
 
     </div>
-
+   
 </div>
 `
 
@@ -425,10 +432,10 @@ function guardarNoticia() {
 
 
 //Ver version detallada de la noticia
-function verDetalles(indice) {
-    document.getElementById('indice-artista-seleccionado').value = indice;
-    artistaSeleccionado = indice;
+function verDetalles() {
 
+
+    alert(indiceNoticia);
 
     document.getElementById('detalle').innerHTML =
         `
@@ -437,17 +444,17 @@ function verDetalles(indice) {
         <div class="container bg-dark">
             <div class="row">
                 <div class="contenedor ">
-                    <img src="${Noticias[indice].Caratula}" class="w-100 principal ">
+                    <img src="${Noticias[indiceNoticia].Caratula}" class="w-100 principal ">
                     <div class="texto-encima "><span class="badge badge-danger p-1">&nbsp;Ultima Hora</span></div>
                 </div>
 
             </div>
 
             <div class="row mt-2">
-                <h6 class="col-12">${Noticias[indice].Titulo}</h6>
-                <p style="color: darkgray;" class="col-12 ">${Noticias[indice].detalleNoticia}</p>
-                <p style="color: darkgray;" class="col-12 ">${Noticias[indice].likes} / ${Noticias[indice].fechaPublicacion}<br>
-                    <p style="color: darkgray;" class="col-12 ">${Noticias[indice].redactor}<br>
+                <h6 class="col-12">${Noticias[indiceNoticia].Titulo}</h6>
+                <p style="color: darkgray;" class="col-12 ">${Noticias[indiceNoticia].detalleNoticia}</p>
+                <p style="color: darkgray;" class="col-12 ">${Noticias[indiceNoticia].likes} / ${Noticias[indiceNoticia].fechaPublicacion}<br>
+                    <p style="color: darkgray;" class="col-12 ">${Noticias[indiceNoticia].redactor}<br>
 
             </div>
 
