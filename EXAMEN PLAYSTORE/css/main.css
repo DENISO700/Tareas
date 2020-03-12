@@ -1,0 +1,18 @@
+body {
+    padding-top: 5rem;
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.sombra {
+    -webkit-box-shadow: -18px 6px 35px -10px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: -18px 6px 35px -10px rgba(0, 0, 0, 0.54);
+    box-shadow: -18px 6px 35px -10px rgba(0, 0, 0, 0.54);
+}
+
+.cambio div :hover {
+    background-color: green;
+}
