@@ -156,11 +156,9 @@ function generarNoticias() {
 
             //Verifica el atributo ultima hora
             if (Noticias[j].ultimaHora == true) {
-                indiceNoticia = j;
 
                 document.getElementById("Principal").innerHTML += ` <div class=" col-md-12 col-xs-12 col-sm-12 bg-white ">
-
-    <div class="container bg-dark">
+                  <div class="container bg-dark">
         <div class="row">
             <div class="contenedor ">
                          <img src="${Noticias[j].Caratula}" class="w-100 principal ">
@@ -434,7 +432,7 @@ function guardarNoticia() {
 //Ver version detallada de la noticia
 function verDetalles() {
 
-
+    indiceNoticia = document.getElementById("indice").value;
     alert(indiceNoticia);
 
     document.getElementById('detalle').innerHTML =
